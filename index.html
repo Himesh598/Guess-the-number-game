@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+    text-align: center;
+    background-image: url(https://media.istockphoto.com/id/978387298/vector/young-people-guessing-quiz-questions-intellectual-game-show-studio-with-buttons-on-stands.jpg?s=612x612&w=0&k=20&c=hIEnY2SrJf6a22Si_SIj3tcXau6XqrAyjmxh24JbTxg=);
+    background-repeat: no-repeat;
+}
+        </style>
+    </head>
+    <body>
+        <h3 style="background-color:#0008ff;color:white;">Guess the number game</h3>
+        
+        <h2>Guess a number between 1 and 10 </h2>
+        
+        <input type="number" id="box">
+        <button onclick="randomnumber()">submit guess</button>
+        <p id="p1"></p>
+        <script>
+            function randomnumber(){
+                 var randomNumber = Math.floor(Math.random() * 10)
+                 var box = document.getElementById("box").value
+                 if (randomNumber == box){
+                       document.getElementById("p1").innerHTML = "Congratulations! You guessed the correct number!"
+                 }
+                 else if (box < randomNumber){
+                    document.getElementById("p1").innerHTML = "Low, try again!"
+                 }
+                 else{
+                    document.getElementById("p1").innerHTML = "Too high, try again!"
+                 }
+            }
+        </script>
+    </body>
+</html>
